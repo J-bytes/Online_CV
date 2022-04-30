@@ -112,8 +112,9 @@ def login():
 @app.route('/<path>')
 def index(path):
 
-    if not current_user.is_authenticated:
-        return redirect(url_for('login'))
+    # lets not force login
+    # if not current_user.is_authenticated:
+    #     return redirect(url_for('login'))
 
     try:
 
