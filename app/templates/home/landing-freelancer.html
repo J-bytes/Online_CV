@@ -30,7 +30,7 @@
 
                             <li class="list-inline-item">
                                 <a class="icon icon-md icon-linkedin" data-toggle="tooltip" data-placement="top" title="slack" href="https://www.linkedin.com/in/jonathan-beaulieu-emond-298513159/">
-                                    <span class="fab fa-slack"></span>
+                                    <span class="fab fa-linkedin"></span>
                                 </a>
                             </li>
                         </ul>
@@ -139,11 +139,12 @@
         </section>
          <section class="section section-lg bg-primary-app pb-0">
             <div class="container">
-        <canvas id="gitGraph"></canvas>
+        <canvas id="gitGraph" width="1920" heigth="1080"></canvas>
         </div>
          </section>
-        <script>
 
+
+        <script>
             var gitgraph = new GitGraph({
 
               template: "metro", // or blackarrow
@@ -154,24 +155,31 @@
         });
             gitgraph.template.colors=["MediumPurple","Tomato","Indigo","DarkGreen"];
             gitgraph.template.commit.message.displayHash=false;
+            gitgraph.template.lineWidth=0.5;
+            gitgraph.template.dotSize=6;
             var university = gitgraph.branch("university");
-        gitgraph.commit("My first commit (june 18 1998)"); // 1 commit upon HEAD
+            var img1 = document.createElement("img");
+
+
+        gitgraph.commit({message : "My first commit - 1998"}); // 1 commit upon HEAD
         // var myfeature = develop.branch("myfeature"); // New branch from develop
         university.commit("Started Bachelor of Physics - 2017");
         var saq = university.branch("saq");
         saq.commit("Started working at SAQ - 2019");
         var asc = university.branch("asc");
-        asc.commit("Internship for the Canadian Space Agency - july 2021")
-        asc.merge(university)
-        university.commit("Finished Bachelor of Physics - april 2021");
+        asc.commit("Internship for the Canadian Space Agency - july 2021");
+        asc.merge(university);
+        university.commit({message : "Graduated Bachelor of Physics - april 2021", dotimage : img1 });
         saq.merge(university,"march 2022");
 
         university.commit("Started Master in machine learning at Mila");
 
         var ciusss=university.branch("ciusss");
-        ciusss.commit("Started internship - may 2022")
+        ciusss.commit("Started internship - may 2022");
 
-        university.commit("Finished master in machine learning - April 2023")
+        university.commit("Finished master in machine learning - April 2023");
+
+        img1.src = "static/assets/img/timeline/graduation.svg";
 
 </script>
 
