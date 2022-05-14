@@ -1189,13 +1189,15 @@
       }
 
       this.context.fill();
+
       this.context.closePath();
+
   }
     else {
       this.context.beginPath(); //TODO : fix image to replace dot
-       this.context.lineWidth = this.dotStrokeWidth/2;
-      this.context.arc(this.x, this.y, this.dotSize*2.5, 0, 2 * Math.PI, false);
 
+      this.context.arc(this.x, this.y, this.dotSize, 0, 2 * Math.PI, false);
+      this.context.lineWidth = 4;
       //we will fill the circle with the image
       var ctx=this.context;
       var img=this.dotimage;
