@@ -1204,11 +1204,11 @@
       img.onload = function () {
         ctx.drawImage(img, this.x-20, this.y+350,80,80);
       }
-      this.context.lineWidth = this.dotStrokeWidth;
-
-      if (typeof this.context.setLineDash === "function") {
-        this.context.setLineDash(this.lineDash);
-      }
+      // this.context.lineWidth = this.dotStrokeWidth;
+      //
+      // if (typeof this.context.setLineDash === "function") {
+      //   this.context.setLineDash(this.lineDash);
+      // }
 
       this.context.stroke();
       this.context.closePath();

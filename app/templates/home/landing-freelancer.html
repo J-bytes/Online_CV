@@ -253,14 +253,16 @@
         gitgraph.template.dotSize = 6;
         var university = gitgraph.branch("university");
         var img1 = document.createElement("img");
-
+        university.lineWidth=4;
 
         gitgraph.commit({message: "My first commit - 1998"}); // 1 commit upon HEAD
         // var myfeature = develop.branch("myfeature"); // New branch from develop
         university.commit("Started Bachelor of Physics - 2017");
         var saq = university.branch("saq");
+        saq.lineWidth=4;
         saq.commit("Started working at SAQ - 2019");
         var asc = university.branch("asc");
+        asc.lineWidth=4;
         asc.commit("Internship for the Canadian Space Agency - july 2021");
         asc.merge(university);
         university.commit({message: "Graduated Bachelor of Physics - april 2021", dotimage: img1});
@@ -269,6 +271,8 @@
         university.commit("Started Master in machine learning at Mila");
 
         var ciusss = university.branch("ciusss");
+        ciusss.lineWidth=4
+
         ciusss.commit("Started internship - may 2022");
 
         university.commit("Finished master in machine learning - April 2023");
