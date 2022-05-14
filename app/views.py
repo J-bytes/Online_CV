@@ -7,7 +7,7 @@ Copyright (c) 2019 - present AppSeed.us
 import os, logging 
 
 # Flask modules
-from flask               import render_template, request, url_for, redirect, send_from_directory
+from flask               import render_template, request, url_for, redirect, send_from_directory,send_file
 from flask_login         import login_user, logout_user, current_user, login_required
 from werkzeug.exceptions import HTTPException, NotFound, abort
 from jinja2              import TemplateNotFound
@@ -134,3 +134,11 @@ def index(path):
 @app.route('/sitemap.xml')
 def sitemap():
     return send_from_directory(os.path.join(app.root_path, 'static'), 'sitemap.xml')
+
+# Download csv
+@app.route('/CV')
+def download_CV():
+
+    return send_file("static/assets/CV.pdf" ,mimetype='pdf',
+                     attachment_filename='CV_jonathan.pdf',
+                     as_attachment=True)
