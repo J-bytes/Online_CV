@@ -231,7 +231,18 @@
             </div>
         </div>
     </section>
+
     <section class="section section-lg bg-primary-app pb-0">
+         <div class="section section-sm bg-primary-app">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 text-center mb-4 mb-md-6">
+                    <h2 class="display-2 fw-bold">
+                        Timeline
+                    </h2>
+
+                </div>
+            </div>
         <div class="container">
             <canvas id="gitGraph" width="1920" heigth="1080"></canvas>
         </div>
@@ -247,7 +258,7 @@
             author: "",
             mode: "extended" // or compact/extended if you don't want the messages
         });
-        gitgraph.template.colors = ["MediumPurple", "Tomato", "Indigo", "DarkGreen"];
+        //gitgraph.template.colors = ["MediumPurple", "Tomato", "Indigo", "DarkGreen"];
         gitgraph.template.commit.message.displayHash = false;
         gitgraph.template.lineWidth = 4;
         gitgraph.template.dotSize = 6;
@@ -265,7 +276,8 @@
         asc.lineWidth=4;
         asc.commit("Internship for the Canadian Space Agency - july 2021");
         asc.merge(university);
-        university.commit({message: "Graduated Bachelor of Physics - april 2021", dotimage: img1});
+        //university.commit({message: "Graduated Bachelor of Physics - april 2021", dotimage: img1});
+        university.commit({message: "Graduated Bachelor of Physics - april 2021"});
         saq.merge(university, "march 2022");
 
         university.commit("Started Master in machine learning at Mila");
@@ -367,8 +379,35 @@
                                 <li class="list-item h6 fw-normal mb-3 text-muted"><br></li>
                             </ul>
                             </p>
+                        <!-- Button Modal -->
+                        <div class="d-grid">
+                            <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal"
+                                data-bs-target="#modal-csa">Default</button>
+                        </div>
+                        <!-- Modal Content -->
+                        <div class="modal fade" id="modal-csa" tabindex="-1" role="dialog" aria-labelledby="modal-default"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h2 class="h6 modal-title">CSA Internship</h2>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>I've helped develop their new website and data management plateform based on the open source project CKAN, itself based on Flask.</p>
+                                        <p>I've also helped implement data visualisation tools for their SciSat's satellites data based on Dash&Plotly</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary">CKAN Website</button>
+                                        <button type="button" class="btn btn-link ms-auto"
+                                            data-bs-dismiss="modal">Source Code</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of Modal Content -->
 
-                            <a href="#" class="btn btn-primary btn-sm">See story</a>
                         </div>
                     </div>
                 </div>
@@ -396,7 +435,34 @@
                                 <li class="list-item h6 fw-normal mb-3 text-muted"><br></li>
                             </ul>
                             </p>
-                            <a href="#" class="btn btn-primary btn-sm">See story</a>
+                           <!-- Button Modal -->
+                        <div class="d-grid">
+                            <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal"
+                                data-bs-target="#modal-ccsmtl">Default</button>
+                        </div>
+                        <!-- Modal Content -->
+                        <div class="modal fade" id="modal-ccsmtl" tabindex="-1" role="dialog" aria-labelledby="modal-default"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h2 class="h6 modal-title">CIUSSS Internship</h2>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>During my internship, I participated at all the stages of developpement of an ML project, from the creation of the database to the deployment of the model</p>
+                                        <p>My main responsability however consisted of the core developpement of the ML models,which included CNN, Vision Transformer and some NLP </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary">Dashboard</button>
+                                        <button type="button" class="btn btn-link ms-auto"
+                                            data-bs-dismiss="modal">Source Code</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of Modal Content -->
                         </div>
                     </div>
                 </div>
@@ -425,61 +491,38 @@
                             </ul>
 
                             </p>
-                            <a href="#" class="btn btn-primary btn-sm">See story</a>
+                             <!-- Button Modal -->
+                        <div class="d-grid">
+                            <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal"
+                                data-bs-target="#modal-mila">See more</button>
+                        </div>
+                        <!-- Modal Content -->
+                        <div class="modal fade" id="modal-mila" tabindex="-1" role="dialog" aria-labelledby="modal-default"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h2 class="h6 modal-title">Mila's class projects</h2>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>I have participated in many team project during my formation at Mila's. Such project included the use of transfer learning to identify animals in the
+                                        Caltech Camera Traps dataset with models such as ResNext and Yolo</p>
+                                        <p>Another interesting project was the developpement of a hierarchical probabilistic U-net in order to reconstruct images of far away galaxy distorted by gravitational lenses</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary">Dashboard</button>
+                                        <button type="button" class="btn btn-link ms-auto"
+                                            data-bs-dismiss="modal">Source Code</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of Modal Content -->
                         </div>
                     </div>
                 </div>
-                <!--                    <div class="col-md-6 col-lg-4 text-center">-->
-                <!--                        <div class="card border-gray-300 mb-4">-->
-                <!--                            <div class="card-body py-5">-->
-                <!--                                <img src="/static/assets/img/clients/forbes.svg" class="img-fluid image-sm" alt="Forbes logo">-->
-                <!--                                <span class="d-block mt-3">-->
-                <!--                                    <span class="star fas fa-star text-warning"></span>-->
-                <!--                                    <span class="star fas fa-star text-warning"></span>-->
-                <!--                                    <span class="star fas fa-star text-warning"></span>-->
-                <!--                                    <span class="star fas fa-star text-warning"></span>-->
-                <!--                                    <span class="star fas fa-star text-warning"></span>-->
-                <!--                                </span>-->
-                <!--                                <p class="card-text py-4 mb-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-                <!--                                <a href="#" class="btn btn-primary btn-sm">See story</a>-->
-                <!--                            </div>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <!--                    <div class="col-md-6 col-lg-4 text-center">-->
-                <!--                        <div class="card border-gray-300 mb-4">-->
-                <!--                            <div class="card-body py-5">-->
-                <!--                                <img src="/static/assets/img/clients/corsair.svg" class="img-fluid image-sm" alt="Corsair Logo">-->
-                <!--                                <span class="d-block mt-3">-->
-                <!--                                    <span class="star fas fa-star text-warning"></span>-->
-                <!--                                    <span class="star fas fa-star text-warning"></span>-->
-                <!--                                    <span class="star fas fa-star text-warning"></span>-->
-                <!--                                    <span class="star fas fa-star text-warning"></span>-->
-                <!--                                    <span class="star fas fa-star text-warning"></span>-->
-                <!--                                </span>-->
-                <!--                                <p class="card-text py-4 mb-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-                <!--                                <a href="#" class="btn btn-primary btn-sm">See story</a>-->
-                <!--                            </div>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <!--                    <div class="col-md-6 col-lg-4 text-center">-->
-                <!--                        <div class="card border-gray-300 mb-4">-->
-                <!--                            <div class="card-body py-5">-->
-                <!--                                <img src="/static/assets/img/clients/docker.svg" class="img-fluid image-sm" alt="Docker Logo">-->
-                <!--                                <span class="d-block mt-3">-->
-                <!--                                    <span class="star fas fa-star text-warning"></span>-->
-                <!--                                    <span class="star fas fa-star text-warning"></span>-->
-                <!--                                    <span class="star fas fa-star text-warning"></span>-->
-                <!--                                    <span class="star fas fa-star text-warning"></span>-->
-                <!--                                    <span class="star fas fa-star text-warning"></span>-->
-                <!--                                </span>-->
-                <!--                                <p class="card-text py-4 mb-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-                <!--                                <a href="#" class="btn btn-primary btn-sm">See story</a>-->
-                <!--                            </div>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <!--                </div>-->
-                <!--            </div>-->
-                <!--        </div>-->
 
                 <div class="section section-lg bg-primary-app">
                     <div class="container">
