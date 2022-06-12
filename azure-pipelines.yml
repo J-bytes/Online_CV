@@ -10,6 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- script: python install -r requirements.txt
 - script: python run.py
   displayName: 'Run a one-line script'
 
