@@ -108,7 +108,7 @@ def login():
     return render_template( 'accounts/login.html', form=form, msg=msg )
 
 # App main route + generic routing
-@app.route('/', defaults={'path': 'index.html'})
+@app.route('/', defaults={'path': 'landing-freelancer.html'})
 @app.route('/<path>')
 def index(path):
 
